@@ -33,6 +33,15 @@ describe('WebdriverIO website', () => {
 });
 ```
 
+#### 2-3. Re-run test 
+Let's re-run your tests! To do so, just run:
+
+```
+./node_modules/.bin/wdio wdio.conf.js
+```
+
+All test shold pass now ✅
+
 If you want to define other Mocha-specific settings, you can do it with the mochaOpts key in your configuration file. A list of all options can be found on the [Mocha project website](https://mochajs.org/).
 
 WDIO runner supports [Mocha](http://mochajs.org/), [Jasmine](http://jasmine.github.io/), and [Cucumber](https://cucumber.io/). Please read if you're interested in more details of framework. https://webdriver.io/docs/frameworks.html

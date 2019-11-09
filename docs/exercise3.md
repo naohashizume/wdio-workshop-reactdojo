@@ -7,7 +7,7 @@ In the tests directory, there is a file called `Login.test.js` in which you'll f
 
 `Page Object Model` is a design pattern which has become popular in test automation for enhancing test maintenance and reducing code duplication.
 
- This is normally where all calls to WebdriverIO will be written. Thus, when the UI changes, **this is the only place you need to modify**. It **should not make assertions themselves**.
+ This is normally where all calls to WebdriverIO will be written. Thus, when the UI changes, **this is the only place you need to modify**. Page Object **should not make assertions themselves**.
 
 Let's create a main object that we call `PageObject`. It will contain general selectors or methods which all page objects will inherit from.
 

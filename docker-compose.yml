@@ -1,0 +1,18 @@
+version: '3'
+services:
+  zalenium:
+    image: dosel/zalenium
+    privileged: true
+    tty: true
+    volumes:
+      - '/var/run/docker.sock:/var/run/docker.sock'
+      - './videos:/home/seluser/videos'
+    ports:
+      - '4444:4444'
+    command: >
+      start --desiredContainers 1
+            --maxDockerSeleniumContainers 1
+            --screenWidth 1920 --screenHeight 1080
+            --videoRecordingEnabled false
+            --sauceLabsEnabled false
+            --startTunnel false

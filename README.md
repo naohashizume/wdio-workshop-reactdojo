@@ -43,7 +43,7 @@ $ npm -v
 Please install and add to your path (This is a requirement for WebdriverIO)
 
 ```
-$ java --version
+$ java -version
 openjdk 12.0.1 2019-04-16
 OpenJDK Runtime Environment (build 12.0.1+12)
 OpenJDK 64-Bit Server VM (build 12.0.1+12, mixed mode, sharing)

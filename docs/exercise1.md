@@ -11,19 +11,19 @@ Let's get started!
 Please clone this workshop repository
 
 ```
-$ git clone <url>
+$ git clone https://github.com/naohashizume/wdio-workshop-reactdojo.git
 ```
 
 Initialize a new npm project before installing dependencies. The `-y` will answer `yes` to all the prompts, giving you a standard npm project. Feel free to omit the `-y` if you'd like to specify your own project details.
 
 ```
-$ cd wdio-workshop-reactdojo-2019
+$ cd wdio-workshop-reactdojo
 $ npm init -y
 ```
 
 #### 1-2. Install WebdriverIO CLI
 
-If you want to use WebdriverIo in your project, I recommend using the test runner. It comes with lots of useful features.
+If you want to use WebdriverIo in your project, I recommend using the test runner. We will use this test runnner in this project. 
 
 ```
 $ npm i ---save-dev @wdio/cli
@@ -70,7 +70,7 @@ module.exports = {
 }
 ```
 
-To set up Babel using this WebdriverIO testrunner, you can use internal `require` to register Babel.
+To set up Babel using this WebdriverIO testrunner, you can use internal `require` to register Babel in `wdio.conf.js`.
 
 ```
 // wdio.conf.js
@@ -84,6 +84,8 @@ mochaOpts: {
 #### 1-5. Modify WebdriverIO configuration
 
 Let's get familiar with the WebdriverIO config file. We will do this by changing/setting a few options. Implement the following changes and see what they do!
+
+In `wdio.conf.js`, `
 
 - Change **maxInstances** to `1` from `10` for now
 
@@ -99,13 +101,13 @@ capabilities: [
         maxInstances: 1,
 ```
 
-- Change **logLevel** to `info` from `debug`
+- Change **logLevel** to `error` from `info`
 
 ```
 logLevel: 'error',
 ```
 
-- Add another capability in the config to run your tests on Chrome.
+- Change **browserName** to `chrome` from `firefox`
   https://webdriver.io/docs/options.html#capabilities
 
 ```
@@ -128,7 +130,14 @@ To do so, just run:
 ./node_modules/.bin/wdio wdio.conf.js
 ```
 
-The test should pass, and you can start writing End-to-end tests with WebdriverIO in next exercise!
+All test should pass execpt
+```
+Login page
+✖ Standard user - login successfully
+```
+Don't worry! This is expected. `expect` is indeed undefined because you never defined it. We chose `mocha` as testing framework and we will also use assertion library called `chai`. Let's install chai assertion library in next exercise and run test again!
+
+After that, you can start writing End-to-end tests with WebdriverIO in next exercise!
 
 [ ◀️ Back to Pre-requisites](README.md)
 
